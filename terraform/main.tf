@@ -7,7 +7,7 @@ resource "aws_eks_cluster" "demo" {
   role_arn = aws_iam_role.eks_cluster.arn
 
   vpc_config {
-    subnet_ids = [aws_subnet.public.id]  # Error 1: Missing subnet resource
+    subnet_ids = [aws_subnet.public.id]
   }
 }
 
