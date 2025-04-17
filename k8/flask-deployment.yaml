@@ -15,7 +15,7 @@ spec:
       containers:
       - name: flask
         image: python:3.9-slim
-        command: ["flask", "run", "--host=0.0.0.0"]  # Error 1: Missing Flask install
+        command: ["flask", "run", "--host=0.0.0.0"]  
         ports:
         - containerPort: 5000
         resources:
@@ -25,7 +25,7 @@ spec:
           limits:
             cpu: "200m"
             memory: "256Mi"
-      restartPolicy: Always  # Error 2: Invalid placement (belongs under 'containers')
+      restartPolicy: Always  
 ---
 apiVersion: v1
 kind: Service
@@ -37,4 +37,4 @@ spec:
   - port: 80
     targetPort: 5000
   selector:
-    app: flask-app-typo  # Error 3: Label mismatch
+    app: flask-app-typo  
