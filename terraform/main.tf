@@ -22,6 +22,3 @@ resource "aws_iam_role" "eks_cluster" {
     }]
   })
 }
-
-# Error 2: Missing required IAM policy attachments
-# Error 3: Missing VPC/subnet resources
